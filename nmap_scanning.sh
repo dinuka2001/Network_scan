@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Install dependencies
-# sudo apt install -y nmap curl
+Install dependencies
+sudo apt install -y nmap curl
 
 # Get local IP address
 local_ip=$(hostname -I | awk '{print $1}')
@@ -15,15 +15,15 @@ if [ -z "$local_ip" ]; then
     exit 1
 fi
 
-# Check if the public IP address was retrieved
-# if [ -z "$public_ip" ]; then
-#     echo "Failed to retrieve public IP address."
-#     exit 1
-# fi
+Check if the public IP address was retrieved
+if [ -z "$public_ip" ]; then
+    echo "Failed to retrieve public IP address."
+    exit 1
+fi
 
 # Print IP addresses (local, public)
 echo "Local IP address: $local_ip"
-# echo "Public IP address: $public_ip"
+echo "Public IP address: $public_ip"
 
 # Function to list all network interfaces
 list_all_NI() {
