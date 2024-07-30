@@ -97,10 +97,15 @@ choose_scan_type() {
 Main function call
 
 select_NI
+echo
 get_ip_addresses
+echo
 choose_ip
+echo
 choose_subnet
+echo
 choose_ports
+echo
 choose_scan_type
 
 sudo nmap $scan_type $ports $selected_ip/$subnet
