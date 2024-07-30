@@ -90,25 +90,73 @@ Enter your choice [1-3]:
 
 - **Subnet Mask**: Specify the subnet mask for the scan. For example, use `24` for `192.168.1.0/24`.
 
-- **Ports**: Enter the ports you want to scan. You can specify:
-  - A list of individual ports separated by commas (e.g., `22,80,443`).
-  - A range of ports (e.g., `1-1024`).
-  - A combination of both (e.g., `22,80,1000-2000`).
-  - Use the `-F` option for a fast scan,it will scan most common 1000 ports.
+- **Ports**: Enter the ports you want to scan starts with -P. You can specify:
+  - A list of individual ports separated by commas (e.g., `-P 22,80,443`).
+  - A range of ports (e.g., `-P 1-1024`).
+  - A combination of both (e.g., `-P 22,80,1000-2000`).
+***OR
+  - Use the `-F` option for a fast scan,it will scan most common 1000 ports.d
 
   For more details on port specification, refer to the [Nmap Port Specification](https://nmap.org/book/man-port-specification.html).
 
+<pre>
+Example
+
+```console
+Enter subnet mask: 24
+
+ you should enter -P befor specify ports
+Enter ports for scan (ex: -P 80,443 or -F): -P 80,443   
+
+```
+</pre>
   
 
 ### Choose Scan Type
 
 - Allows the user to select the type of scan to perform using `nmap`.
 
+- For more ditails aboute [nmap.org/book/man-briefoptions](https://nmap.org/book/man-briefoptions.html)
+<pre>
+Example
+
+```console
+Select scan type insted (-sL, -Pn, -PS, -PA, -PU)
+Enter scan type: -Pn 
+
+```
+</pre>
+
+
+## Final output
+
+<pre>
+Example
+
+```console
+Failed to resolve "80,443".
+Nmap scan report for 192.168.107.93
+Host is up (0.0017s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+53/tcp open  domain
+MAC Address: AA:AA:AA:AA:AA:AA (Unknown)
+
+Nmap scan report for 192.168.107.134
+Host is up (0.000020s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+80/tcp open  http
+
+```
+</pre>
+
 
 ## Important Notes
 
 - The script requires `sudo` privileges to run `nmap` with certain scan types.
 - Ensure you have the necessary permissions and authorization to perform network scans on the chosen network or IP address.
+- resorce... [nmap.org](https://nmap.org/book/man.html)
 
 
 

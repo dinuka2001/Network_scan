@@ -83,13 +83,14 @@ choose_subnet() {
 
 # Function to choose ports
 choose_ports() {
-    read -p "Enter ports (comma-separated): " ports
+    echo " you should enter -P befor specify ports"
+    read -p "Enter ports for scan (ex: -P 80,443 or -F): " ports
+
 }
 
 # Function to choose scan type
 choose_scan_type() {
-    echo "Select scan type:"
-    echo "-sL, -Pn, -PS, -PA, -PU"
+    echo "Select scan type insted (-sL, -Pn, -PS, -PA, -PU)"
     read -p "Enter scan type: " scan_type
 }
 
@@ -102,4 +103,4 @@ choose_subnet
 choose_ports
 choose_scan_type
 
-sudo nmap $scan_type -p $ports $selected_ip/$subnet
+sudo nmap $scan_type $ports $selected_ip/$subnet
