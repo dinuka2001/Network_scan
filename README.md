@@ -19,16 +19,19 @@ sudo apt install -y nmap curl
 
 The script performs the following tasks:
 
+To clone and run follow belove commad
+
 ```bash
 git clone https://github.com/dinuka2001/Network_scan.git
 cd Network_scan
 chmode +x nmap_scanning.sh
+./nmap_scanning.sh
 ```
 
-### Retrieve Local and Public IP Addresses
+### List and Select Network Interfaces
 
-- **Local IP Address:** Retrieves the local IP address using the `hostname` command.
-- **Public IP Address:** Retrieves the public IP address using the `api.ipify.org` service.
+- **List Interfaces:** Lists all available network interfaces using the `ip` command.
+- **Select Interface:** Allows the user to select a network interface for scanning.
 
 <pre>
 ```console
@@ -40,10 +43,15 @@ docker0
 Enter the name of the network interface for scan: 
 ```
 </pre>
-### List and Select Network Interfaces
 
-- **List Interfaces:** Lists all available network interfaces using the `ip` command.
-- **Select Interface:** Allows the user to select a network interface for scanning.
+### Retrieve Local and Public IP Addresses
+
+Show the local and public ip addresses related to Network Interface
+
+- **Local IP Address:** Retrieves the local IP address using the `hostname` command.
+- **Public IP Address:** Retrieves the public IP address using the `api.ipify.org` service.
+
+
 
 ### Select IP Address
 
