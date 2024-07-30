@@ -3,37 +3,28 @@
 Install dependencies
 sudo apt install -y nmap curl
 
-# Get local IP address
-local_ip=$(hostname -I | awk '{print $1}')
+get_ip_addresses() {
+    # Get local IP address
+    local_ip=$(hostname -I | awk '{print $1}')
 
-# Get public IP address
-public_ip=$(curl -s https://api.ipify.org)
+    # Get public IP address
+    public_ip=$(curl -s https://api.ipify.org)
 
-# Check if the local IP address was retrieved
-if [ -z "$local_ip" ]; then
-    echo "Failed to retrieve local IP address."
-    exit 1
-fi
+    # Check if the local IP address was retrieved
+    if [ -z "$local_ip" ]; then
+        echo "Failed to retrieve local IP address."
+        exit 1
+    fi
 
-Check if the public IP address was retrieved
-if [ -z "$public_ip" ]; then
-    echo "Failed to retrieve public IP address."
-    exit 1
-fi
+    # Check if the public IP address was retrieved
+    if [ -z "$public_ip" ]; then
+        echo "Failed to retrieve public IP address."
+        exit 1
+    fi
 
-# Print IP addresses (local, public)
-echo "Local IP address: $local_ip"
-echo "Public IP address: $public_ip"
-
-# Function to list all network interfaces
-list_all_NI() {
-    ip -o link show | awk -F': ' '{print $2}'
-}
-
-# Function to show interface details
-show_interface_info() {
-    local iface=$1
-    ip addr show dev $iface
+    # Print IP addresses (local, public)
+    echo "Local IP address: $local_ip"
+    echo "Public IP address: $public_ip"
 }
 
 # Function to select network interface
@@ -91,6 +82,7 @@ choose_scan_type() {
 }
 
 Main function call
+et_ip_addresses
 select_NI
 choose_ip
 choose_subnet
