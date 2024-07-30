@@ -19,6 +19,11 @@ sudo apt install -y nmap curl
 
 The script performs the following tasks:
 
+```bash
+git clone https://github.com/dinuka2001/Network_scan.git
+cd Network_scan
+chmode +x nmap_scanning.sh
+
 ### Retrieve Local and Public IP Addresses
 
 - **Local IP Address:** Retrieves the local IP address using the `hostname` command.
@@ -41,8 +46,13 @@ The script performs the following tasks:
 
 - Allows the user to select the type of scan to perform using `nmap`.
 
+
 ## Important Notes
 
 - The script requires `sudo` privileges to run `nmap` with certain scan types.
 - Ensure you have the necessary permissions and authorization to perform network scans on the chosen network or IP address.
+
+
+
+
 
