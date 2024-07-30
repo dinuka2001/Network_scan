@@ -23,12 +23,23 @@ The script performs the following tasks:
 git clone https://github.com/dinuka2001/Network_scan.git
 cd Network_scan
 chmode +x nmap_scanning.sh
+```
 
 ### Retrieve Local and Public IP Addresses
 
 - **Local IP Address:** Retrieves the local IP address using the `hostname` command.
 - **Public IP Address:** Retrieves the public IP address using the `api.ipify.org` service.
 
+<pre>
+```
+lo
+eth0
+wlan0
+docker0
+
+Enter the name of the network interface for scan: 
+```
+</pre>
 ### List and Select Network Interfaces
 
 - **List Interfaces:** Lists all available network interfaces using the `ip` command.
