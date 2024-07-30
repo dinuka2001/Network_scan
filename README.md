@@ -31,7 +31,7 @@ chmode +x nmap_scanning.sh
 - **Public IP Address:** Retrieves the public IP address using the `api.ipify.org` service.
 
 <pre>
-```
+```console
 lo
 eth0
 wlan0
