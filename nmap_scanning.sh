@@ -94,8 +94,9 @@ choose_scan_type() {
 }
 
 Main function call
-get_ip_addresses
+
 select_NI
+get_ip_addresses
 choose_ip
 choose_subnet
 choose_ports

@@ -34,13 +34,24 @@ chmode +x nmap_scanning.sh
 - **Select Interface:** Allows the user to select a network interface for scanning.
 
 <pre>
+Example
+
 ```console
 lo
 eth0
 wlan0
 docker0
 
-Enter the name of the network interface for scan: 
+Enter the name of the network interface for scan: wlan0
+
+Details of wlan0:
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 00:11:22:33:44:55 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.100/24 brd 192.168.0.255 scope global dynamic noprefixroute wlan0
+       valid_lft 3600sec preferred_lft 3600sec
+    inet6 fe80::1234:abcd:5678:efgh/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
 ```
 </pre>
 
@@ -51,15 +62,43 @@ Show the local and public ip addresses related to Network Interface
 - **Local IP Address:** Retrieves the local IP address using the `hostname` command.
 - **Public IP Address:** Retrieves the public IP address using the `api.ipify.org` service.
 
+<pre>
+```console
+Local IP address: 192.168.1.100
+Public IP address: 203.0.113.45
+```
+</pre>
+
 
 
 ### Select IP Address
 
 - Provides options to select the local IP, public IP, or enter a custom IP address or domain name.
 
+<pre>
+```console
+Select IP address: 
+ 1) Local IP 
+ 2) Public IP 
+ 3) Custom IP or Domain Name
+Enter your choice [1-3]: 
+
+```
+</pre>
+
 ### Enter Subnet Mask and Ports
 
-- Prompts the user to enter the subnet mask and ports for the scan.
+- **Subnet Mask**: Specify the subnet mask for the scan. For example, use `24` for `192.168.1.0/24`.
+
+- **Ports**: Enter the ports you want to scan. You can specify:
+  - A list of individual ports separated by commas (e.g., `22,80,443`).
+  - A range of ports (e.g., `1-1024`).
+  - A combination of both (e.g., `22,80,1000-2000`).
+  - Use the `-F` option for a fast scan,it will scan most common 1000 ports.
+
+  For more details on port specification, refer to the [Nmap Port Specification](https://nmap.org/book/man-port-specification.html).
+
+  
 
 ### Choose Scan Type
 
