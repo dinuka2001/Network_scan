@@ -13,6 +13,7 @@ You can install these dependencies using the following command:
 
 ```bash
 sudo apt install -y nmap curl
+```
 
 ## Script Description
 
